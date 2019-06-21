@@ -89,6 +89,6 @@
         <input type="submit" value="Создать QR-код"></form><hr/>';
         
     // benchmark
-    QRtools::timeBenchmark();    
+   // QRtools::timeBenchmark();
 
     
