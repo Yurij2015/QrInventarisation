@@ -31,30 +31,27 @@
     
     
     
-    class materialPage extends Page
+    class storagePage extends Page
     {
         protected function DoBeforeCreate()
         {
-            $this->SetTitle('Материалы');
-            $this->SetMenuLabel('Материалы');
+            $this->SetTitle('Место хранения');
+            $this->SetMenuLabel('Место хранения');
             $this->SetHeader(GetPagesHeader());
             $this->SetFooter(GetPagesFooter());
     
             $this->dataset = new TableDataset(
                 MySqlIConnectionFactory::getInstance(),
                 GetConnectionOptions(),
-                '`material`');
+                '`storage`');
             $this->dataset->addFields(
                 array(
-                    new IntegerField('idmaterial', true, true, true),
-                    new StringField('namematerial'),
-                    new StringField('invnumber'),
-                    new IntegerField('category_idcategory'),
-                    new StringField('category'),
-                    new BlobField('qrcode')
+                    new IntegerField('idstorage', true, true),
+                    new StringField('storagename'),
+                    new StringField('storageadress'),
+                    new StringField('storagedesc')
                 )
             );
-            $this->dataset->AddLookupField('category_idcategory', 'category', new IntegerField('idcategory'), new StringField('category_name', false, false, false, false, 'category_idcategory_category_name', 'category_idcategory_category_name_category'), 'category_idcategory_category_name_category');
         }
     
         protected function DoPrepare() {
@@ -85,22 +82,19 @@
         protected function getFiltersColumns()
         {
             return array(
-                new FilterColumn($this->dataset, 'idmaterial', 'idmaterial', 'Idmaterial'),
-                new FilterColumn($this->dataset, 'namematerial', 'namematerial', 'Наименование материала'),
-                new FilterColumn($this->dataset, 'category', 'category', 'Категория'),
-                new FilterColumn($this->dataset, 'category_idcategory', 'category_idcategory_category_name', 'Категория'),
-                new FilterColumn($this->dataset, 'invnumber', 'invnumber', 'Инвентарный номер'),
-                new FilterColumn($this->dataset, 'qrcode', 'qrcode', 'QR-код')
+                new FilterColumn($this->dataset, 'idstorage', 'idstorage', 'Idstorage'),
+                new FilterColumn($this->dataset, 'storagename', 'storagename', 'Название места хранения'),
+                new FilterColumn($this->dataset, 'storageadress', 'storageadress', 'Адрес'),
+                new FilterColumn($this->dataset, 'storagedesc', 'storagedesc', 'Описание')
             );
         }
     
         protected function setupQuickFilter(QuickFilter $quickFilter, FixedKeysArray $columns)
         {
             $quickFilter
-                ->addColumn($columns['namematerial'])
-                ->addColumn($columns['category_idcategory'])
-                ->addColumn($columns['invnumber'])
-                ->addColumn($columns['qrcode']);
+                ->addColumn($columns['storagename'])
+                ->addColumn($columns['storageadress'])
+                ->addColumn($columns['storagedesc']);
         }
     
         protected function setupColumnFilter(ColumnFilter $columnFilter)
@@ -155,46 +149,36 @@
         protected function AddFieldColumns(Grid $grid, $withDetails = true)
         {
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_namematerial_handler_list');
+            $column->SetFullTextWindowHandlerName('storageGrid_storagename_handler_list');
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
             $column->SetFixedWidth(null);
             $grid->AddViewColumn($column);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_category_idcategory_category_name_handler_list');
+            $column->SetFullTextWindowHandlerName('storageGrid_storageadress_handler_list');
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
             $column->SetFixedWidth(null);
             $grid->AddViewColumn($column);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_invnumber_handler_list');
-            $column->setMinimalVisibility(ColumnVisibility::PHONE);
-            $column->SetDescription('');
-            $column->SetFixedWidth(null);
-            $grid->AddViewColumn($column);
-            
-            //
-            // View column for qrcode field
-            //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
-            $column->SetOrderable(true);
+            $column->SetFullTextWindowHandlerName('storageGrid_storagedesc_handler_list');
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
             $column->SetFixedWidth(null);
@@ -204,47 +188,41 @@
         protected function AddSingleRecordViewColumns(Grid $grid)
         {
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_namematerial_handler_view');
+            $column->SetFullTextWindowHandlerName('storageGrid_storagename_handler_view');
             $grid->AddSingleRecordViewColumn($column);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_category_idcategory_category_name_handler_view');
+            $column->SetFullTextWindowHandlerName('storageGrid_storageadress_handler_view');
             $grid->AddSingleRecordViewColumn($column);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_invnumber_handler_view');
-            $grid->AddSingleRecordViewColumn($column);
-            
-            //
-            // View column for qrcode field
-            //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
-            $column->SetOrderable(true);
+            $column->SetFullTextWindowHandlerName('storageGrid_storagedesc_handler_view');
             $grid->AddSingleRecordViewColumn($column);
         }
     
         protected function AddEditColumns(Grid $grid)
         {
             //
-            // Edit column for namematerial field
+            // Edit column for storagename field
             //
-            $editor = new TextAreaEdit('namematerial_edit', 50, 8);
-            $editColumn = new CustomEditColumn('Наименование материала', 'namematerial', $editor, $this->dataset);
+            $editor = new TextEdit('storagename_edit');
+            $editor->SetMaxLength(100);
+            $editColumn = new CustomEditColumn('Название места хранения', 'storagename', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $editColumn->setAllowListCellEdit(false);
             $editColumn->setAllowSingleViewCellEdit(false);
@@ -252,38 +230,11 @@
             $grid->AddEditColumn($editColumn);
             
             //
-            // Edit column for category_idcategory field
+            // Edit column for storageadress field
             //
-            $editor = new ComboBox('category_idcategory_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
-            $lookupDataset = new TableDataset(
-                MySqlIConnectionFactory::getInstance(),
-                GetConnectionOptions(),
-                '`category`');
-            $lookupDataset->addFields(
-                array(
-                    new IntegerField('idcategory', true, true, true),
-                    new StringField('category_name'),
-                    new StringField('description')
-                )
-            );
-            $lookupDataset->setOrderByField('category_name', 'ASC');
-            $editColumn = new LookUpEditColumn(
-                'Категория', 
-                'category_idcategory', 
-                $editor, 
-                $this->dataset, 'idcategory', 'category_name', $lookupDataset);
-            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
-            $editor->GetValidatorCollection()->AddValidator($validator);
-            $editColumn->setAllowListCellEdit(false);
-            $editColumn->setAllowSingleViewCellEdit(false);
-            $this->ApplyCommonColumnEditProperties($editColumn);
-            $grid->AddEditColumn($editColumn);
-            
-            //
-            // Edit column for invnumber field
-            //
-            $editor = new TextAreaEdit('invnumber_edit', 50, 8);
-            $editColumn = new CustomEditColumn('Инвентарный номер', 'invnumber', $editor, $this->dataset);
+            $editor = new TextEdit('storageadress_edit');
+            $editor->SetMaxLength(100);
+            $editColumn = new CustomEditColumn('Адрес', 'storageadress', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $editColumn->setAllowListCellEdit(false);
             $editColumn->setAllowSingleViewCellEdit(false);
@@ -291,11 +242,10 @@
             $grid->AddEditColumn($editColumn);
             
             //
-            // Edit column for qrcode field
+            // Edit column for storagedesc field
             //
-            $editor = new ImageUploader('qrcode_edit');
-            $editor->SetShowImage(false);
-            $editColumn = new FileUploadingColumn('QR-код', 'qrcode', $editor, $this->dataset, false, false, 'materialGrid_qrcode_handler_edit');
+            $editor = new TextAreaEdit('storagedesc_edit', 50, 8);
+            $editColumn = new CustomEditColumn('Описание', 'storagedesc', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $editColumn->setAllowListCellEdit(false);
             $editColumn->setAllowSingleViewCellEdit(false);
@@ -306,55 +256,30 @@
         protected function AddMultiEditColumns(Grid $grid)
         {
             //
-            // Edit column for namematerial field
+            // Edit column for storagename field
             //
-            $editor = new TextAreaEdit('namematerial_edit', 50, 8);
-            $editColumn = new CustomEditColumn('Наименование материала', 'namematerial', $editor, $this->dataset);
+            $editor = new TextEdit('storagename_edit');
+            $editor->SetMaxLength(100);
+            $editColumn = new CustomEditColumn('Название места хранения', 'storagename', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddMultiEditColumn($editColumn);
             
             //
-            // Edit column for category_idcategory field
+            // Edit column for storageadress field
             //
-            $editor = new ComboBox('category_idcategory_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
-            $lookupDataset = new TableDataset(
-                MySqlIConnectionFactory::getInstance(),
-                GetConnectionOptions(),
-                '`category`');
-            $lookupDataset->addFields(
-                array(
-                    new IntegerField('idcategory', true, true, true),
-                    new StringField('category_name'),
-                    new StringField('description')
-                )
-            );
-            $lookupDataset->setOrderByField('category_name', 'ASC');
-            $editColumn = new LookUpEditColumn(
-                'Категория', 
-                'category_idcategory', 
-                $editor, 
-                $this->dataset, 'idcategory', 'category_name', $lookupDataset);
-            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
-            $editor->GetValidatorCollection()->AddValidator($validator);
-            $this->ApplyCommonColumnEditProperties($editColumn);
-            $grid->AddMultiEditColumn($editColumn);
-            
-            //
-            // Edit column for invnumber field
-            //
-            $editor = new TextAreaEdit('invnumber_edit', 50, 8);
-            $editColumn = new CustomEditColumn('Инвентарный номер', 'invnumber', $editor, $this->dataset);
+            $editor = new TextEdit('storageadress_edit');
+            $editor->SetMaxLength(100);
+            $editColumn = new CustomEditColumn('Адрес', 'storageadress', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddMultiEditColumn($editColumn);
             
             //
-            // Edit column for qrcode field
+            // Edit column for storagedesc field
             //
-            $editor = new ImageUploader('qrcode_edit');
-            $editor->SetShowImage(false);
-            $editColumn = new FileUploadingColumn('QR-код', 'qrcode', $editor, $this->dataset, false, false, 'materialGrid_qrcode_handler_multi_edit');
+            $editor = new TextAreaEdit('storagedesc_edit', 50, 8);
+            $editColumn = new CustomEditColumn('Описание', 'storagedesc', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddMultiEditColumn($editColumn);
@@ -363,55 +288,30 @@
         protected function AddInsertColumns(Grid $grid)
         {
             //
-            // Edit column for namematerial field
+            // Edit column for storagename field
             //
-            $editor = new TextAreaEdit('namematerial_edit', 50, 8);
-            $editColumn = new CustomEditColumn('Наименование материала', 'namematerial', $editor, $this->dataset);
+            $editor = new TextEdit('storagename_edit');
+            $editor->SetMaxLength(100);
+            $editColumn = new CustomEditColumn('Название места хранения', 'storagename', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddInsertColumn($editColumn);
             
             //
-            // Edit column for category_idcategory field
+            // Edit column for storageadress field
             //
-            $editor = new ComboBox('category_idcategory_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
-            $lookupDataset = new TableDataset(
-                MySqlIConnectionFactory::getInstance(),
-                GetConnectionOptions(),
-                '`category`');
-            $lookupDataset->addFields(
-                array(
-                    new IntegerField('idcategory', true, true, true),
-                    new StringField('category_name'),
-                    new StringField('description')
-                )
-            );
-            $lookupDataset->setOrderByField('category_name', 'ASC');
-            $editColumn = new LookUpEditColumn(
-                'Категория', 
-                'category_idcategory', 
-                $editor, 
-                $this->dataset, 'idcategory', 'category_name', $lookupDataset);
-            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
-            $editor->GetValidatorCollection()->AddValidator($validator);
-            $this->ApplyCommonColumnEditProperties($editColumn);
-            $grid->AddInsertColumn($editColumn);
-            
-            //
-            // Edit column for invnumber field
-            //
-            $editor = new TextAreaEdit('invnumber_edit', 50, 8);
-            $editColumn = new CustomEditColumn('Инвентарный номер', 'invnumber', $editor, $this->dataset);
+            $editor = new TextEdit('storageadress_edit');
+            $editor->SetMaxLength(100);
+            $editColumn = new CustomEditColumn('Адрес', 'storageadress', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddInsertColumn($editColumn);
             
             //
-            // Edit column for qrcode field
+            // Edit column for storagedesc field
             //
-            $editor = new ImageUploader('qrcode_edit');
-            $editor->SetShowImage(false);
-            $editColumn = new FileUploadingColumn('QR-код', 'qrcode', $editor, $this->dataset, false, false, 'materialGrid_qrcode_handler_insert');
+            $editor = new TextAreaEdit('storagedesc_edit', 50, 8);
+            $editColumn = new CustomEditColumn('Описание', 'storagedesc', $editor, $this->dataset);
             $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddInsertColumn($editColumn);
@@ -426,111 +326,90 @@
         protected function AddPrintColumns(Grid $grid)
         {
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_namematerial_handler_print');
+            $column->SetFullTextWindowHandlerName('storageGrid_storagename_handler_print');
             $grid->AddPrintColumn($column);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_category_idcategory_category_name_handler_print');
+            $column->SetFullTextWindowHandlerName('storageGrid_storageadress_handler_print');
             $grid->AddPrintColumn($column);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_invnumber_handler_print');
-            $grid->AddPrintColumn($column);
-            
-            //
-            // View column for qrcode field
-            //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
-            $column->SetOrderable(true);
+            $column->SetFullTextWindowHandlerName('storageGrid_storagedesc_handler_print');
             $grid->AddPrintColumn($column);
         }
     
         protected function AddExportColumns(Grid $grid)
         {
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_namematerial_handler_export');
+            $column->SetFullTextWindowHandlerName('storageGrid_storagename_handler_export');
             $grid->AddExportColumn($column);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_category_idcategory_category_name_handler_export');
+            $column->SetFullTextWindowHandlerName('storageGrid_storageadress_handler_export');
             $grid->AddExportColumn($column);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_invnumber_handler_export');
-            $grid->AddExportColumn($column);
-            
-            //
-            // View column for qrcode field
-            //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
-            $column->SetOrderable(true);
+            $column->SetFullTextWindowHandlerName('storageGrid_storagedesc_handler_export');
             $grid->AddExportColumn($column);
         }
     
         private function AddCompareColumns(Grid $grid)
         {
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_namematerial_handler_compare');
+            $column->SetFullTextWindowHandlerName('storageGrid_storagename_handler_compare');
             $grid->AddCompareColumn($column);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_category_idcategory_category_name_handler_compare');
+            $column->SetFullTextWindowHandlerName('storageGrid_storageadress_handler_compare');
             $grid->AddCompareColumn($column);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('materialGrid_invnumber_handler_compare');
-            $grid->AddCompareColumn($column);
-            
-            //
-            // View column for qrcode field
-            //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
-            $column->SetOrderable(true);
+            $column->SetFullTextWindowHandlerName('storageGrid_storagedesc_handler_compare');
             $grid->AddCompareColumn($column);
         }
     
@@ -623,120 +502,99 @@
     
         protected function doRegisterHandlers() {
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_namematerial_handler_list', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagename_handler_list', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_category_idcategory_category_name_handler_list', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storageadress_handler_list', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_list', $column);
-            GetApplication()->RegisterHTTPHandler($handler);
-            
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagedesc_handler_list', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_namematerial_handler_print', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagename_handler_print', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_category_idcategory_category_name_handler_print', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storageadress_handler_print', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_print', $column);
-            GetApplication()->RegisterHTTPHandler($handler);
-            
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagedesc_handler_print', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_namematerial_handler_compare', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagename_handler_compare', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_category_idcategory_category_name_handler_compare', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storageadress_handler_compare', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_compare', $column);
-            GetApplication()->RegisterHTTPHandler($handler);
-            
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
-            GetApplication()->RegisterHTTPHandler($handler);
-            
-            $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_insert', new NullFilter());
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagedesc_handler_compare', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for namematerial field
+            // View column for storagename field
             //
-            $column = new TextViewColumn('namematerial', 'namematerial', 'Наименование материала', $this->dataset);
+            $column = new TextViewColumn('storagename', 'storagename', 'Название места хранения', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_namematerial_handler_view', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagename_handler_view', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for category_name field
+            // View column for storageadress field
             //
-            $column = new TextViewColumn('category_idcategory', 'category_idcategory_category_name', 'Категория', $this->dataset);
+            $column = new TextViewColumn('storageadress', 'storageadress', 'Адрес', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_category_idcategory_category_name_handler_view', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storageadress_handler_view', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for invnumber field
+            // View column for storagedesc field
             //
-            $column = new TextViewColumn('invnumber', 'invnumber', 'Инвентарный номер', $this->dataset);
+            $column = new TextViewColumn('storagedesc', 'storagedesc', 'Описание', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_view', $column);
-            GetApplication()->RegisterHTTPHandler($handler);
-            
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
-            GetApplication()->RegisterHTTPHandler($handler);
-            
-            $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_edit', new NullFilter());
-            GetApplication()->RegisterHTTPHandler($handler);
-            
-            $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_multi_edit', new NullFilter());
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'storageGrid_storagedesc_handler_view', $column);
             GetApplication()->RegisterHTTPHandler($handler);
         }
        
@@ -886,8 +744,8 @@
 
     try
     {
-        $Page = new materialPage("material", "material.php", GetCurrentUserPermissionSetForDataSource("material"), 'UTF-8');
-        $Page->SetRecordPermission(GetCurrentUserRecordPermissionsForDataSource("material"));
+        $Page = new storagePage("storage", "storage.php", GetCurrentUserPermissionSetForDataSource("storage"), 'UTF-8');
+        $Page->SetRecordPermission(GetCurrentUserRecordPermissionsForDataSource("storage"));
         GetApplication()->SetMainPage($Page);
         GetApplication()->Run();
     }

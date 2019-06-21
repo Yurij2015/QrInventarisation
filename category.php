@@ -47,7 +47,7 @@
             $this->dataset->addFields(
                 array(
                     new IntegerField('idcategory', true, true, true),
-                    new StringField('category_name', true),
+                    new StringField('category_name'),
                     new StringField('description')
                 )
             );
@@ -83,7 +83,7 @@
             return array(
                 new FilterColumn($this->dataset, 'idcategory', 'idcategory', 'Idcategory'),
                 new FilterColumn($this->dataset, 'description', 'description', 'Описание категории'),
-                new FilterColumn($this->dataset, 'category_name', 'category_name', 'Наименование категории')
+                new FilterColumn($this->dataset, 'category_name', 'category_name', 'Category Name')
             );
         }
     
@@ -160,7 +160,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
             $column->SetFullTextWindowHandlerName('categoryGrid_category_name_handler_list');
@@ -184,7 +184,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
             $column->SetFullTextWindowHandlerName('categoryGrid_category_name_handler_view');
@@ -209,9 +209,8 @@
             //
             $editor = new TextEdit('category_name_edit');
             $editor->SetMaxLength(100);
-            $editColumn = new CustomEditColumn('Наименование категории', 'category_name', $editor, $this->dataset);
-            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
-            $editor->GetValidatorCollection()->AddValidator($validator);
+            $editColumn = new CustomEditColumn('Category Name', 'category_name', $editor, $this->dataset);
+            $editColumn->SetAllowSetToNull(true);
             $editColumn->setAllowListCellEdit(false);
             $editColumn->setAllowSingleViewCellEdit(false);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -234,9 +233,8 @@
             //
             $editor = new TextEdit('category_name_edit');
             $editor->SetMaxLength(100);
-            $editColumn = new CustomEditColumn('Наименование категории', 'category_name', $editor, $this->dataset);
-            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
-            $editor->GetValidatorCollection()->AddValidator($validator);
+            $editColumn = new CustomEditColumn('Category Name', 'category_name', $editor, $this->dataset);
+            $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddMultiEditColumn($editColumn);
         }
@@ -257,9 +255,8 @@
             //
             $editor = new TextEdit('category_name_edit');
             $editor->SetMaxLength(100);
-            $editColumn = new CustomEditColumn('Наименование категории', 'category_name', $editor, $this->dataset);
-            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
-            $editor->GetValidatorCollection()->AddValidator($validator);
+            $editColumn = new CustomEditColumn('Category Name', 'category_name', $editor, $this->dataset);
+            $editColumn->SetAllowSetToNull(true);
             $this->ApplyCommonColumnEditProperties($editColumn);
             $grid->AddInsertColumn($editColumn);
             $grid->SetShowAddButton(true && $this->GetSecurityInfo()->HasAddGrant());
@@ -284,7 +281,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
             $column->SetFullTextWindowHandlerName('categoryGrid_category_name_handler_print');
@@ -305,7 +302,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
             $column->SetFullTextWindowHandlerName('categoryGrid_category_name_handler_export');
@@ -326,7 +323,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
             $column->SetFullTextWindowHandlerName('categoryGrid_category_name_handler_compare');
@@ -432,7 +429,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'categoryGrid_category_name_handler_list', $column);
             GetApplication()->RegisterHTTPHandler($handler);
@@ -448,7 +445,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'categoryGrid_category_name_handler_print', $column);
             GetApplication()->RegisterHTTPHandler($handler);
@@ -464,7 +461,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'categoryGrid_category_name_handler_compare', $column);
             GetApplication()->RegisterHTTPHandler($handler);
@@ -480,7 +477,7 @@
             //
             // View column for category_name field
             //
-            $column = new TextViewColumn('category_name', 'category_name', 'Наименование категории', $this->dataset);
+            $column = new TextViewColumn('category_name', 'category_name', 'Category Name', $this->dataset);
             $column->SetOrderable(true);
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'categoryGrid_category_name_handler_view', $column);
             GetApplication()->RegisterHTTPHandler($handler);

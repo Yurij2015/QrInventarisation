@@ -35,8 +35,8 @@
     {
         protected function DoBeforeCreate()
         {
-            $this->SetTitle('Проверка');
-            $this->SetMenuLabel('Проверка');
+            $this->SetTitle('Инвентаризация');
+            $this->SetMenuLabel('Инвентаризация');
             $this->SetHeader(GetPagesHeader());
             $this->SetFooter(GetPagesFooter());
     
@@ -50,10 +50,12 @@
                     new DateTimeField('date'),
                     new StringField('info'),
                     new IntegerField('material_idmaterial', true),
-                    new IntegerField('employee_idemployee', true)
+                    new IntegerField('employee_idemployee'),
+                    new StringField('count'),
+                    new IntegerField('storage', true)
                 )
             );
-            $this->dataset->AddLookupField('material_idmaterial', 'material', new IntegerField('idmaterial'), new StringField('namematerial', false, false, false, false, 'material_idmaterial_namematerial', 'material_idmaterial_namematerial_material'), 'material_idmaterial_namematerial_material');
+            $this->dataset->AddLookupField('material_idmaterial', 'material', new IntegerField('idmaterial'), new StringField('invnumber', false, false, false, false, 'material_idmaterial_invnumber', 'material_idmaterial_invnumber_material'), 'material_idmaterial_invnumber_material');
             $this->dataset->AddLookupField('employee_idemployee', 'employee', new IntegerField('idemployee'), new StringField('name', false, false, false, false, 'employee_idemployee_name', 'employee_idemployee_name_employee'), 'employee_idemployee_name_employee');
         }
     
@@ -88,8 +90,10 @@
                 new FilterColumn($this->dataset, 'idrevision', 'idrevision', 'Idrevision'),
                 new FilterColumn($this->dataset, 'date', 'date', 'Дата'),
                 new FilterColumn($this->dataset, 'info', 'info', 'Информация'),
-                new FilterColumn($this->dataset, 'material_idmaterial', 'material_idmaterial_namematerial', 'Материал'),
-                new FilterColumn($this->dataset, 'employee_idemployee', 'employee_idemployee_name', 'Сотрудник')
+                new FilterColumn($this->dataset, 'material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер'),
+                new FilterColumn($this->dataset, 'employee_idemployee', 'employee_idemployee_name', 'Сотрудник'),
+                new FilterColumn($this->dataset, 'count', 'count', 'Количество'),
+                new FilterColumn($this->dataset, 'storage', 'storage', 'Место хранения')
             );
         }
     
@@ -99,7 +103,9 @@
                 ->addColumn($columns['date'])
                 ->addColumn($columns['info'])
                 ->addColumn($columns['material_idmaterial'])
-                ->addColumn($columns['employee_idemployee']);
+                ->addColumn($columns['employee_idemployee'])
+                ->addColumn($columns['count'])
+                ->addColumn($columns['storage']);
         }
     
         protected function setupColumnFilter(ColumnFilter $columnFilter)
@@ -177,12 +183,12 @@
             $grid->AddViewColumn($column);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_namematerial_handler_list');
+            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_invnumber_handler_list');
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
             $column->SetFixedWidth(null);
@@ -193,6 +199,29 @@
             //
             $column = new TextViewColumn('employee_idemployee', 'employee_idemployee_name', 'Сотрудник', $this->dataset);
             $column->SetOrderable(true);
+            $column->setMinimalVisibility(ColumnVisibility::PHONE);
+            $column->SetDescription('');
+            $column->SetFixedWidth(null);
+            $grid->AddViewColumn($column);
+            
+            //
+            // View column for count field
+            //
+            $column = new TextViewColumn('count', 'count', 'Количество', $this->dataset);
+            $column->SetOrderable(true);
+            $column->setMinimalVisibility(ColumnVisibility::PHONE);
+            $column->SetDescription('');
+            $column->SetFixedWidth(null);
+            $grid->AddViewColumn($column);
+            
+            //
+            // View column for storage field
+            //
+            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column->SetOrderable(true);
+            $column->setNumberAfterDecimal(0);
+            $column->setThousandsSeparator(',');
+            $column->setDecimalSeparator('');
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
             $column->SetFixedWidth(null);
@@ -219,12 +248,12 @@
             $grid->AddSingleRecordViewColumn($column);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_namematerial_handler_view');
+            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_invnumber_handler_view');
             $grid->AddSingleRecordViewColumn($column);
             
             //
@@ -232,6 +261,23 @@
             //
             $column = new TextViewColumn('employee_idemployee', 'employee_idemployee_name', 'Сотрудник', $this->dataset);
             $column->SetOrderable(true);
+            $grid->AddSingleRecordViewColumn($column);
+            
+            //
+            // View column for count field
+            //
+            $column = new TextViewColumn('count', 'count', 'Количество', $this->dataset);
+            $column->SetOrderable(true);
+            $grid->AddSingleRecordViewColumn($column);
+            
+            //
+            // View column for storage field
+            //
+            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column->SetOrderable(true);
+            $column->setNumberAfterDecimal(0);
+            $column->setThousandsSeparator(',');
+            $column->setDecimalSeparator('');
             $grid->AddSingleRecordViewColumn($column);
         }
     
@@ -271,17 +317,18 @@
                 array(
                     new IntegerField('idmaterial', true, true, true),
                     new StringField('namematerial'),
+                    new StringField('invnumber'),
+                    new IntegerField('category_idcategory'),
                     new StringField('category'),
-                    new IntegerField('qrcode_idqrcode', true),
-                    new IntegerField('category_idcategory', true)
+                    new BlobField('qrcode')
                 )
             );
-            $lookupDataset->setOrderByField('namematerial', 'ASC');
+            $lookupDataset->setOrderByField('invnumber', 'ASC');
             $editColumn = new LookUpEditColumn(
-                'Материал', 
+                'Инвентарный номер', 
                 'material_idmaterial', 
                 $editor, 
-                $this->dataset, 'idmaterial', 'namematerial', $lookupDataset);
+                $this->dataset, 'idmaterial', 'invnumber', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $editColumn->setAllowListCellEdit(false);
@@ -303,7 +350,7 @@
                     new StringField('name'),
                     new StringField('phone'),
                     new StringField('info'),
-                    new IntegerField('position_idposition', true)
+                    new IntegerField('position_idposition')
                 )
             );
             $lookupDataset->setOrderByField('name', 'ASC');
@@ -312,6 +359,30 @@
                 'employee_idemployee', 
                 $editor, 
                 $this->dataset, 'idemployee', 'name', $lookupDataset);
+            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
+            $editor->GetValidatorCollection()->AddValidator($validator);
+            $editColumn->setAllowListCellEdit(false);
+            $editColumn->setAllowSingleViewCellEdit(false);
+            $this->ApplyCommonColumnEditProperties($editColumn);
+            $grid->AddEditColumn($editColumn);
+            
+            //
+            // Edit column for count field
+            //
+            $editor = new TextEdit('count_edit');
+            $editor->SetMaxLength(10);
+            $editColumn = new CustomEditColumn('Количество', 'count', $editor, $this->dataset);
+            $editColumn->SetAllowSetToNull(true);
+            $editColumn->setAllowListCellEdit(false);
+            $editColumn->setAllowSingleViewCellEdit(false);
+            $this->ApplyCommonColumnEditProperties($editColumn);
+            $grid->AddEditColumn($editColumn);
+            
+            //
+            // Edit column for storage field
+            //
+            $editor = new TextEdit('storage_edit');
+            $editColumn = new CustomEditColumn('Место хранения', 'storage', $editor, $this->dataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $editColumn->setAllowListCellEdit(false);
@@ -352,17 +423,18 @@
                 array(
                     new IntegerField('idmaterial', true, true, true),
                     new StringField('namematerial'),
+                    new StringField('invnumber'),
+                    new IntegerField('category_idcategory'),
                     new StringField('category'),
-                    new IntegerField('qrcode_idqrcode', true),
-                    new IntegerField('category_idcategory', true)
+                    new BlobField('qrcode')
                 )
             );
-            $lookupDataset->setOrderByField('namematerial', 'ASC');
+            $lookupDataset->setOrderByField('invnumber', 'ASC');
             $editColumn = new LookUpEditColumn(
-                'Материал', 
+                'Инвентарный номер', 
                 'material_idmaterial', 
                 $editor, 
-                $this->dataset, 'idmaterial', 'namematerial', $lookupDataset);
+                $this->dataset, 'idmaterial', 'invnumber', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -382,7 +454,7 @@
                     new StringField('name'),
                     new StringField('phone'),
                     new StringField('info'),
-                    new IntegerField('position_idposition', true)
+                    new IntegerField('position_idposition')
                 )
             );
             $lookupDataset->setOrderByField('name', 'ASC');
@@ -391,6 +463,26 @@
                 'employee_idemployee', 
                 $editor, 
                 $this->dataset, 'idemployee', 'name', $lookupDataset);
+            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
+            $editor->GetValidatorCollection()->AddValidator($validator);
+            $this->ApplyCommonColumnEditProperties($editColumn);
+            $grid->AddMultiEditColumn($editColumn);
+            
+            //
+            // Edit column for count field
+            //
+            $editor = new TextEdit('count_edit');
+            $editor->SetMaxLength(10);
+            $editColumn = new CustomEditColumn('Количество', 'count', $editor, $this->dataset);
+            $editColumn->SetAllowSetToNull(true);
+            $this->ApplyCommonColumnEditProperties($editColumn);
+            $grid->AddMultiEditColumn($editColumn);
+            
+            //
+            // Edit column for storage field
+            //
+            $editor = new TextEdit('storage_edit');
+            $editColumn = new CustomEditColumn('Место хранения', 'storage', $editor, $this->dataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -429,17 +521,18 @@
                 array(
                     new IntegerField('idmaterial', true, true, true),
                     new StringField('namematerial'),
+                    new StringField('invnumber'),
+                    new IntegerField('category_idcategory'),
                     new StringField('category'),
-                    new IntegerField('qrcode_idqrcode', true),
-                    new IntegerField('category_idcategory', true)
+                    new BlobField('qrcode')
                 )
             );
-            $lookupDataset->setOrderByField('namematerial', 'ASC');
+            $lookupDataset->setOrderByField('invnumber', 'ASC');
             $editColumn = new LookUpEditColumn(
-                'Материал', 
+                'Инвентарный номер', 
                 'material_idmaterial', 
                 $editor, 
-                $this->dataset, 'idmaterial', 'namematerial', $lookupDataset);
+                $this->dataset, 'idmaterial', 'invnumber', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -459,7 +552,7 @@
                     new StringField('name'),
                     new StringField('phone'),
                     new StringField('info'),
-                    new IntegerField('position_idposition', true)
+                    new IntegerField('position_idposition')
                 )
             );
             $lookupDataset->setOrderByField('name', 'ASC');
@@ -468,6 +561,26 @@
                 'employee_idemployee', 
                 $editor, 
                 $this->dataset, 'idemployee', 'name', $lookupDataset);
+            $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
+            $editor->GetValidatorCollection()->AddValidator($validator);
+            $this->ApplyCommonColumnEditProperties($editColumn);
+            $grid->AddInsertColumn($editColumn);
+            
+            //
+            // Edit column for count field
+            //
+            $editor = new TextEdit('count_edit');
+            $editor->SetMaxLength(10);
+            $editColumn = new CustomEditColumn('Количество', 'count', $editor, $this->dataset);
+            $editColumn->SetAllowSetToNull(true);
+            $this->ApplyCommonColumnEditProperties($editColumn);
+            $grid->AddInsertColumn($editColumn);
+            
+            //
+            // Edit column for storage field
+            //
+            $editor = new TextEdit('storage_edit');
+            $editColumn = new CustomEditColumn('Место хранения', 'storage', $editor, $this->dataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -500,12 +613,12 @@
             $grid->AddPrintColumn($column);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_namematerial_handler_print');
+            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_invnumber_handler_print');
             $grid->AddPrintColumn($column);
             
             //
@@ -513,6 +626,23 @@
             //
             $column = new TextViewColumn('employee_idemployee', 'employee_idemployee_name', 'Сотрудник', $this->dataset);
             $column->SetOrderable(true);
+            $grid->AddPrintColumn($column);
+            
+            //
+            // View column for count field
+            //
+            $column = new TextViewColumn('count', 'count', 'Количество', $this->dataset);
+            $column->SetOrderable(true);
+            $grid->AddPrintColumn($column);
+            
+            //
+            // View column for storage field
+            //
+            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column->SetOrderable(true);
+            $column->setNumberAfterDecimal(0);
+            $column->setThousandsSeparator(',');
+            $column->setDecimalSeparator('');
             $grid->AddPrintColumn($column);
         }
     
@@ -536,12 +666,12 @@
             $grid->AddExportColumn($column);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_namematerial_handler_export');
+            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_invnumber_handler_export');
             $grid->AddExportColumn($column);
             
             //
@@ -549,6 +679,23 @@
             //
             $column = new TextViewColumn('employee_idemployee', 'employee_idemployee_name', 'Сотрудник', $this->dataset);
             $column->SetOrderable(true);
+            $grid->AddExportColumn($column);
+            
+            //
+            // View column for count field
+            //
+            $column = new TextViewColumn('count', 'count', 'Количество', $this->dataset);
+            $column->SetOrderable(true);
+            $grid->AddExportColumn($column);
+            
+            //
+            // View column for storage field
+            //
+            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column->SetOrderable(true);
+            $column->setNumberAfterDecimal(0);
+            $column->setThousandsSeparator(',');
+            $column->setDecimalSeparator('');
             $grid->AddExportColumn($column);
         }
     
@@ -572,12 +719,12 @@
             $grid->AddCompareColumn($column);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
             $column->SetMaxLength(75);
-            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_namematerial_handler_compare');
+            $column->SetFullTextWindowHandlerName('revisionGrid_material_idmaterial_invnumber_handler_compare');
             $grid->AddCompareColumn($column);
             
             //
@@ -585,6 +732,23 @@
             //
             $column = new TextViewColumn('employee_idemployee', 'employee_idemployee_name', 'Сотрудник', $this->dataset);
             $column->SetOrderable(true);
+            $grid->AddCompareColumn($column);
+            
+            //
+            // View column for count field
+            //
+            $column = new TextViewColumn('count', 'count', 'Количество', $this->dataset);
+            $column->SetOrderable(true);
+            $grid->AddCompareColumn($column);
+            
+            //
+            // View column for storage field
+            //
+            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column->SetOrderable(true);
+            $column->setNumberAfterDecimal(0);
+            $column->setThousandsSeparator(',');
+            $column->setDecimalSeparator('');
             $grid->AddCompareColumn($column);
         }
     
@@ -685,11 +849,11 @@
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_namematerial_handler_list', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_invnumber_handler_list', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
@@ -701,11 +865,11 @@
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_namematerial_handler_print', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_invnumber_handler_print', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
@@ -717,11 +881,11 @@
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_namematerial_handler_compare', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_invnumber_handler_compare', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
@@ -733,11 +897,11 @@
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
-            // View column for namematerial field
+            // View column for invnumber field
             //
-            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_namematerial', 'Материал', $this->dataset);
+            $column = new TextViewColumn('material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер', $this->dataset);
             $column->SetOrderable(true);
-            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_namematerial_handler_view', $column);
+            $handler = new ShowTextBlobHandler($this->dataset, $this, 'revisionGrid_material_idmaterial_invnumber_handler_view', $column);
             GetApplication()->RegisterHTTPHandler($handler);
         }
        

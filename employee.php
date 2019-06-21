@@ -50,7 +50,7 @@
                     new StringField('name'),
                     new StringField('phone'),
                     new StringField('info'),
-                    new IntegerField('position_idposition', true)
+                    new IntegerField('position_idposition')
                 )
             );
             $this->dataset->AddLookupField('position_idposition', '`position`', new IntegerField('idposition'), new StringField('name', false, false, false, false, 'position_idposition_name', 'position_idposition_name_position'), 'position_idposition_name_position');

@@ -18,24 +18,24 @@ $grants = array('guest' =>
         'employee' => new PermissionSet(false, false, false, false),
         'material' => new PermissionSet(false, false, false, false),
         'position' => new PermissionSet(false, false, false, false),
-        'qrcode' => new PermissionSet(false, false, false, false),
-        'revision' => new PermissionSet(false, false, false, false))
+        'revision' => new PermissionSet(false, false, false, false),
+        'storage' => new PermissionSet(false, false, false, false))
     ,
     'guest' => 
         array('category' => new PermissionSet(false, false, false, false),
         'employee' => new PermissionSet(false, false, false, false),
         'material' => new PermissionSet(false, false, false, false),
         'position' => new PermissionSet(false, false, false, false),
-        'qrcode' => new PermissionSet(false, false, false, false),
-        'revision' => new PermissionSet(false, false, false, false))
+        'revision' => new PermissionSet(false, false, false, false),
+        'storage' => new PermissionSet(false, false, false, false))
     ,
     'Admin' => 
         array('category' => new PermissionSet(false, false, false, false),
         'employee' => new PermissionSet(false, false, false, false),
         'material' => new PermissionSet(false, false, false, false),
         'position' => new PermissionSet(false, false, false, false),
-        'qrcode' => new PermissionSet(false, false, false, false),
-        'revision' => new PermissionSet(false, false, false, false))
+        'revision' => new PermissionSet(false, false, false, false),
+        'storage' => new PermissionSet(false, false, false, false))
     );
 
 $appGrants = array('guest' => new PermissionSet(false, false, false, false),
@@ -49,8 +49,8 @@ $tableCaptions = array('category' => 'Категории',
 'employee' => 'Сотрудники',
 'material' => 'Материалы',
 'position' => 'Должности',
-'qrcode' => 'QR-код',
-'revision' => 'Проверка');
+'revision' => 'Инвентаризация',
+'storage' => 'Место хранения');
 
 function SetUpUserAuthorization()
 {
