@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd1b0957-699d-4e1c-bb07-f1683bfa9160" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qr-gen/qr-read.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qr-read.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qr-gen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/test51d1b147bd97ec4c1bc503b973025345.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/test7c80bbf98099dfbe5a2868b68ea2a5bd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/test9d9859ebb4e825179a00a36b2d734ca0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/testb8542d7fede83ee3dc60c3de2235d277.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/testd8a2b000e24895dc836218380ec4d8d0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/testdb2554bbb14951259ed70f8c9ba51693.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/temp/testdce9cbf275e7b3199a78a4652e2c269b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpgen_settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpgen_settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-gen/CHANGELOG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-gen/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-gen/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-gen/VERSION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-gen/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/qr-gen/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qr-read.html" beforeDir="false" afterPath="$PROJECT_DIR$/qr-read.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,54 +38,41 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/bindings/tcpdf/qrcode.php">
+        <entry file="file://$PROJECT_DIR$/qr-gen/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29990">
-              <caret line="307" column="10" selection-start-line="307" selection-start-column="10" selection-end-line="307" selection-end-column="10" />
+            <state relative-caret-position="231">
+              <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+              <folding>
+                <element signature="e#400#406#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/temp/testd8a2b000e24895dc836218380ec4d8d0.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/temp/testdb2554bbb14951259ed70f8c9ba51693.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/temp/testdce9cbf275e7b3199a78a4652e2c269b.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/qr-gen/tools/merge.php">
+        <entry file="file://$PROJECT_DIR$/qr-gen.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-331" />
+            <state relative-caret-position="126">
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+              <folding>
+                <element signature="e#67#73#0" expanded="true" />
+                <element signature="e#108#114#0" expanded="true" />
+                <element signature="e#132#138#0" expanded="true" />
+                <element signature="e#379#385#0" expanded="true" />
+                <element signature="e#401#407#0" expanded="true" />
+                <element signature="e#9#15#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/temp/test7c80bbf98099dfbe5a2868b68ea2a5bd.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/temp/test9d9859ebb4e825179a00a36b2d734ca0.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/temp/test51d1b147bd97ec4c1bc503b973025345.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/qr-gen/temp/testb8542d7fede83ee3dc60c3de2235d277.png">
-          <provider selected="true" editor-type-id="images" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/qr-read.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -103,11 +90,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/qr-gen/qr-read.html" />
         <option value="$PROJECT_DIR$/qr-gen/index.php" />
-        <option value="$PROJECT_DIR$/qr-read.html" />
         <option value="$PROJECT_DIR$/phpgen_settings.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/qr-gen.php" />
+        <option value="$PROJECT_DIR$/qr-read.html" />
       </list>
     </option>
   </component>
@@ -131,28 +119,6 @@
               <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
               <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="qr-gen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="qr-gen" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="qr-gen" type="462c0819:PsiDirectoryNode" />
-              <item name="temp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -167,6 +133,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="web.server" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,24 +168,24 @@
       <option name="presentableId" value="Default" />
       <updated>1561124964911</updated>
       <workItem from="1561124976016" duration="593000" />
-      <workItem from="1561125744672" duration="4223000" />
+      <workItem from="1561125744672" duration="7140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4816000" />
+    <option name="totallyTimeSpent" value="7733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1124" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20713525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14802982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="PHP-CGI Server" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19192913" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19192913" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -222,7 +193,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.08661418" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.08661418" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -240,13 +211,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qr-gen/qrlib.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -295,16 +259,6 @@
     <entry file="file://$PROJECT_DIR$/qr-gen/INSTALL">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
-          <folding>
-            <element signature="e#9#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qrdb.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-428">
@@ -328,13 +282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" selection-start-line="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qr-read.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="95" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -378,13 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/bindings/tcpdf/qrcode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29990">
-          <caret line="307" column="10" selection-start-line="307" selection-start-column="10" selection-end-line="307" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qr-gen/temp/test7c80bbf98099dfbe5a2868b68ea2a5bd.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -392,18 +332,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/qr-gen/temp/test51d1b147bd97ec4c1bc503b973025345.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testb8542d7fede83ee3dc60c3de2235d277.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testd8a2b000e24895dc836218380ec4d8d0.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testdb2554bbb14951259ed70f8c9ba51693.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testdce9cbf275e7b3199a78a4652e2c269b.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/qr-gen/CHANGELOG">
@@ -414,6 +342,64 @@
     <entry file="file://$PROJECT_DIR$/qr-gen/tools/merge.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-331" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testdce9cbf275e7b3199a78a4652e2c269b.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testdb2554bbb14951259ed70f8c9ba51693.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testb8542d7fede83ee3dc60c3de2235d277.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/temp/testd8a2b000e24895dc836218380ec4d8d0.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/bindings/tcpdf/qrcode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27644">
+          <caret line="307" column="10" selection-start-line="307" selection-start-column="10" selection-end-line="307" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+          <folding>
+            <element signature="e#400#406#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#67#73#0" expanded="true" />
+            <element signature="e#108#114#0" expanded="true" />
+            <element signature="e#132#138#0" expanded="true" />
+            <element signature="e#379#385#0" expanded="true" />
+            <element signature="e#401#407#0" expanded="true" />
+            <element signature="e#9#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-read.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
       </provider>
     </entry>
   </component>
