@@ -93,7 +93,7 @@
                         </li>
 
                         <li>
-                            <a class="sidebar-nav-item" href="qr-read" title="Читать QR-код">
+                            <a class="sidebar-nav-item" href="qr-read.html" title="Читать QR-код">
                                 Читать QR-код
                             </a>
                         </li>
@@ -124,17 +124,14 @@
                             </a>
                         </li>
 
-
                         <li>
-                            <a class="sidebar-nav-item" href="qrcode.php" title="QR-код">
-                                QR-код
+                            <a class="sidebar-nav-item" href="revision.php" title="Инвентаризация">
+                                Инвентаризация
                             </a>
                         </li>
-
-
                         <li>
-                            <a class="sidebar-nav-item" href="revision.php" title="Проверка">
-                                Проверка
+                            <a class="sidebar-nav-item" href="storage.php" title="Место хранения">
+                                Место хранения
                             </a>
                         </li>
 
@@ -165,7 +162,6 @@
                     <?php
 
 
-
                     //set it to writable location, a place for temp generated PNG files
                     $PNG_TEMP_DIR = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR;
 
@@ -183,11 +179,11 @@
 
                     //processing form input
                     //remember to sanitize user input in real-life solution !!!
-                    $errorCorrectionLevel = 'L';
+                    $errorCorrectionLevel = 'H';
                     if (isset($_REQUEST['level']) && in_array($_REQUEST['level'], array('L', 'M', 'Q', 'H')))
                         $errorCorrectionLevel = $_REQUEST['level'];
 
-                    $matrixPointSize = 4;
+                    $matrixPointSize = 10;
                     if (isset($_REQUEST['size']))
                         $matrixPointSize = min(max((int)$_REQUEST['size'], 1), 10);
 
@@ -205,8 +201,8 @@
                     } else {
 
                         //default data
-                        echo 'You can provide data in GET parameter: <a href="?data=like_that">like that</a><hr/>';
-                        QRcode::png('PHP QR Code :)', $filename, $errorCorrectionLevel, $matrixPointSize, 2);
+                       // echo 'Данные можно отправлять в GET параметрах: <a href="?data=данные из гет-параметров">данные из гет-параметров</a><hr/>';
+                       // QRcode::png('PHP QR Code :)', $filename, $errorCorrectionLevel, $matrixPointSize, 2);
 
                     }
 
@@ -215,17 +211,17 @@
 
                     //config form
                     echo '<form action="qr-gen.php" method="post">
-        Инвентарный номер:&nbsp;<input name="data" value="' . (isset($_REQUEST['data']) ? htmlspecialchars($_REQUEST['data']) : 'PHP QR Code :)') . '" />&nbsp;
+        Инвентарный номер:&nbsp;<input name="data" value="' . (isset($_REQUEST['data']) ? htmlspecialchars($_REQUEST['data']) : 'Введите инвентарный номер') . '" />&nbsp;
         Качество:&nbsp;<select name="level">
-            <option value="L" ' . (($errorCorrectionLevel == 'L') ? ' selected' : '') . '> L - smallest</option>
-            <option value="M" ' . (($errorCorrectionLevel == 'M') ? ' selected' : '') . '> M</option>
-            <option value="Q" ' . (($errorCorrectionLevel == 'Q') ? ' selected' : '') . '> Q</option>
-            <option value="H" ' . (($errorCorrectionLevel == 'H') ? ' selected' : '') . '> H - best</option>
+            <option value="L" ' . (($errorCorrectionLevel == 'L') ? ' selected' : '') . '> низкое</option>
+            <option value="M" ' . (($errorCorrectionLevel == 'M') ? ' selected' : '') . '> среднее</option>
+            <option value="Q" ' . (($errorCorrectionLevel == 'Q') ? ' selected' : '') . '> высокое</option>
+            <option value="H" ' . (($errorCorrectionLevel == 'H') ? ' selected' : '') . '> высшее</option>
         </select>&nbsp;
         Размер:&nbsp;<select name="size">';
 
                     for ($i = 1; $i <= 10; $i++)
-                        echo '<option value="' . $i . '"' . (($matrixPointSize == $i) ? ' selected' : '') . '>' . $i . '</option>';
+                        echo '<option value="' . $i . ' " ' . (($matrixPointSize == $i) ? ' selected' : '') . ' > ' . $i . '</option>';
 
                     echo '</select>&nbsp;
         <input type="submit" value="Создать QR-код"></form><hr/>';

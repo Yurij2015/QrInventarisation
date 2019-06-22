@@ -87,6 +87,11 @@
 
                     <ul class="nav nav-pills nav-stacked">
 
+                        <li>
+                            <a class="sidebar-nav-item" href="qr-gen.php" title="Категории">
+                                Генерировать QR-код
+                            </a>
+                        </li>
 
                         <li class="active" title="Прочитать QR-код">
                             <span class="sidebar-nav-item">
@@ -122,15 +127,13 @@
 
 
                         <li>
-                            <a class="sidebar-nav-item" href="qrcode.php" title="QR-код">
-                                QR-код
+                            <a class="sidebar-nav-item" href="revision.php" title="Инвентаризация">
+                                Инвентаризация
                             </a>
                         </li>
-
-
                         <li>
-                            <a class="sidebar-nav-item" href="revision.php" title="Проверка">
-                                Проверка
+                            <a class="sidebar-nav-item" href="storage.php" title="Место хранения">
+                                Место хранения
                             </a>
                         </li>
 
@@ -146,8 +149,20 @@
         <div class="col-md-12">
             <div class="sidebar-outer">
                 <div class="container-padding">
+                    <div class="page-header">
+                        <ol class="breadcrumb pgui-breadcrumb">
+                            <li><a href="index.php"><i class="icon-home"></i></a></li>
 
-                    <h1>Поднесите QR-код к камере</h1>
+                            <li class="dropdown">
+                                Читать QR-код
+
+
+                            </li>
+                        </ol>
+                        <h1>Читать QR-код</h1>
+                    </div>
+
+                    <h4>Поднесите QR-код к камере</h4>
 
                     <video id="preview"></video>
                     <script type="text/javascript">

@@ -193,7 +193,7 @@
             //
             // View column for qrcode field
             //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
+            $column = new BlobImageViewColumn('qrcode', 'qrcode', 'QR-код', $this->dataset, false, 'materialGrid_qrcode_handler_list');
             $column->SetOrderable(true);
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
@@ -233,7 +233,7 @@
             //
             // View column for qrcode field
             //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
+            $column = new BlobImageViewColumn('qrcode', 'qrcode', 'QR-код', $this->dataset, false, 'materialGrid_qrcode_handler_view');
             $column->SetOrderable(true);
             $grid->AddSingleRecordViewColumn($column);
         }
@@ -455,7 +455,7 @@
             //
             // View column for qrcode field
             //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
+            $column = new BlobImageViewColumn('qrcode', 'qrcode', 'QR-код', $this->dataset, false, 'materialGrid_qrcode_handler_print');
             $column->SetOrderable(true);
             $grid->AddPrintColumn($column);
         }
@@ -492,7 +492,7 @@
             //
             // View column for qrcode field
             //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
+            $column = new BlobImageViewColumn('qrcode', 'qrcode', 'QR-код', $this->dataset, false, 'materialGrid_qrcode_handler_export');
             $column->SetOrderable(true);
             $grid->AddExportColumn($column);
         }
@@ -529,7 +529,7 @@
             //
             // View column for qrcode field
             //
-            $column = new DownloadDataColumn('qrcode', 'qrcode', 'QR-код', $this->dataset);
+            $column = new BlobImageViewColumn('qrcode', 'qrcode', 'QR-код', $this->dataset, false, 'materialGrid_qrcode_handler_compare');
             $column->SetOrderable(true);
             $grid->AddCompareColumn($column);
         }
@@ -646,7 +646,7 @@
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_list', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
+            $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_list', new NullFilter());
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
@@ -673,7 +673,7 @@
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_print', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
+            $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_print', new NullFilter());
             GetApplication()->RegisterHTTPHandler($handler);
             
             //
@@ -700,7 +700,7 @@
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_compare', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
+            $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_compare', new NullFilter());
             GetApplication()->RegisterHTTPHandler($handler);
             
             $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_insert', new NullFilter());
@@ -730,7 +730,7 @@
             $handler = new ShowTextBlobHandler($this->dataset, $this, 'materialGrid_invnumber_handler_view', $column);
             GetApplication()->RegisterHTTPHandler($handler);
             
-            $handler = new DownloadHTTPHandler($this->dataset, 'qrcode', 'qrcode_handler', '', '', true);
+            $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_view', new NullFilter());
             GetApplication()->RegisterHTTPHandler($handler);
             
             $handler = new ImageHTTPHandler($this->dataset, 'qrcode', 'materialGrid_qrcode_handler_edit', new NullFilter());
