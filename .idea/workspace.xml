@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dd1b0957-699d-4e1c-bb07-f1683bfa9160" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/languages/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/languages/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/material.php" beforeDir="false" afterPath="$PROJECT_DIR$/material.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpgen_settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpgen_settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpgen_settings666.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-gen.php" beforeDir="false" afterPath="$PROJECT_DIR$/qr-gen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-read.html" beforeDir="false" afterPath="$PROJECT_DIR$/qr-read.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpgen_settings999.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qr-gen/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/revision.php" beforeDir="false" afterPath="$PROJECT_DIR$/revision.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qr-gen.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="151" column="47" lean-forward="true" selection-start-line="151" selection-start-column="47" selection-end-line="151" selection-end-column="47" />
+            <state relative-caret-position="534">
+              <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
               <folding>
                 <element signature="e#67#73#0" expanded="true" />
                 <element signature="e#108#114#0" expanded="true" />
@@ -52,19 +47,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phpgen_settings999.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="62" column="178" selection-start-line="62" selection-start-column="3" selection-end-line="63" selection-end-column="215" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qr-read.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="464">
+              <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="137" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -78,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phpgen_settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="282">
               <caret line="63" column="215" selection-start-line="63" selection-start-column="215" selection-end-line="63" selection-end-column="215" />
             </state>
           </provider>
@@ -106,9 +92,9 @@
         <option value="$PROJECT_DIR$/qr-gen/index.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/components/languages/lang.php" />
-        <option value="$PROJECT_DIR$/phpgen_settings.php" />
-        <option value="$PROJECT_DIR$/qr-gen.php" />
         <option value="$PROJECT_DIR$/qr-read.html" />
+        <option value="$PROJECT_DIR$/qr-gen.php" />
+        <option value="$PROJECT_DIR$/phpgen_settings.php" />
       </list>
     </option>
   </component>
@@ -146,7 +132,7 @@
             <path>
               <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
               <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="temp" type="462c0819:PsiDirectoryNode" />
+              <item name="qr-gen" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -197,16 +183,15 @@
       <option name="presentableId" value="Default" />
       <updated>1561124964911</updated>
       <workItem from="1561124976016" duration="593000" />
-      <workItem from="1561125744672" duration="10476000" />
+      <workItem from="1561125744672" duration="11307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11069000" />
+    <option name="totallyTimeSpent" value="11900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1124" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14802982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -423,13 +408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phpgen_settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="63" column="215" selection-start-line="63" selection-start-column="215" selection-end-line="63" selection-end-column="215" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp/test.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -445,10 +423,17 @@
     <entry file="file://$PROJECT_DIR$/temp/test1df79d71d92e5295995c5f63318b56d2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/qr-read.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="137" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/qr-gen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="151" column="47" lean-forward="true" selection-start-line="151" selection-start-column="47" selection-end-line="151" selection-end-column="47" />
+        <state relative-caret-position="534">
+          <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
           <folding>
             <element signature="e#67#73#0" expanded="true" />
             <element signature="e#108#114#0" expanded="true" />
@@ -460,10 +445,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-read.html">
+    <entry file="file://$PROJECT_DIR$/phpgen_settings555.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="324">
+          <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="63" selection-end-column="215" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpgen_settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="63" column="215" selection-start-line="63" selection-start-column="215" selection-end-line="63" selection-end-column="215" />
         </state>
       </provider>
     </entry>

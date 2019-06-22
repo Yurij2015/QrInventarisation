@@ -57,6 +57,7 @@
             );
             $this->dataset->AddLookupField('material_idmaterial', 'material', new IntegerField('idmaterial'), new StringField('invnumber', false, false, false, false, 'material_idmaterial_invnumber', 'material_idmaterial_invnumber_material'), 'material_idmaterial_invnumber_material');
             $this->dataset->AddLookupField('employee_idemployee', 'employee', new IntegerField('idemployee'), new StringField('name', false, false, false, false, 'employee_idemployee_name', 'employee_idemployee_name_employee'), 'employee_idemployee_name_employee');
+            $this->dataset->AddLookupField('storage', '`storage`', new IntegerField('idstorage'), new StringField('storagename', false, false, false, false, 'storage_storagename', 'storage_storagename_storage'), 'storage_storagename_storage');
         }
     
         protected function DoPrepare() {
@@ -93,7 +94,7 @@
                 new FilterColumn($this->dataset, 'material_idmaterial', 'material_idmaterial_invnumber', 'Инвентарный номер'),
                 new FilterColumn($this->dataset, 'employee_idemployee', 'employee_idemployee_name', 'Сотрудник'),
                 new FilterColumn($this->dataset, 'count', 'count', 'Количество'),
-                new FilterColumn($this->dataset, 'storage', 'storage', 'Место хранения')
+                new FilterColumn($this->dataset, 'storage', 'storage_storagename', 'Место хранения')
             );
         }
     
@@ -215,13 +216,10 @@
             $grid->AddViewColumn($column);
             
             //
-            // View column for storage field
+            // View column for storagename field
             //
-            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column = new TextViewColumn('storage', 'storage_storagename', 'Место хранения', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $column->setMinimalVisibility(ColumnVisibility::PHONE);
             $column->SetDescription('');
             $column->SetFixedWidth(null);
@@ -271,13 +269,10 @@
             $grid->AddSingleRecordViewColumn($column);
             
             //
-            // View column for storage field
+            // View column for storagename field
             //
-            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column = new TextViewColumn('storage', 'storage_storagename', 'Место хранения', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddSingleRecordViewColumn($column);
         }
     
@@ -381,8 +376,25 @@
             //
             // Edit column for storage field
             //
-            $editor = new TextEdit('storage_edit');
-            $editColumn = new CustomEditColumn('Место хранения', 'storage', $editor, $this->dataset);
+            $editor = new ComboBox('storage_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
+            $lookupDataset = new TableDataset(
+                MySqlIConnectionFactory::getInstance(),
+                GetConnectionOptions(),
+                '`storage`');
+            $lookupDataset->addFields(
+                array(
+                    new IntegerField('idstorage', true, true),
+                    new StringField('storagename'),
+                    new StringField('storageadress'),
+                    new StringField('storagedesc')
+                )
+            );
+            $lookupDataset->setOrderByField('storagename', 'ASC');
+            $editColumn = new LookUpEditColumn(
+                'Место хранения', 
+                'storage', 
+                $editor, 
+                $this->dataset, 'idstorage', 'storagename', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $editColumn->setAllowListCellEdit(false);
@@ -481,8 +493,25 @@
             //
             // Edit column for storage field
             //
-            $editor = new TextEdit('storage_edit');
-            $editColumn = new CustomEditColumn('Место хранения', 'storage', $editor, $this->dataset);
+            $editor = new ComboBox('storage_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
+            $lookupDataset = new TableDataset(
+                MySqlIConnectionFactory::getInstance(),
+                GetConnectionOptions(),
+                '`storage`');
+            $lookupDataset->addFields(
+                array(
+                    new IntegerField('idstorage', true, true),
+                    new StringField('storagename'),
+                    new StringField('storageadress'),
+                    new StringField('storagedesc')
+                )
+            );
+            $lookupDataset->setOrderByField('storagename', 'ASC');
+            $editColumn = new LookUpEditColumn(
+                'Место хранения', 
+                'storage', 
+                $editor, 
+                $this->dataset, 'idstorage', 'storagename', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -579,8 +608,25 @@
             //
             // Edit column for storage field
             //
-            $editor = new TextEdit('storage_edit');
-            $editColumn = new CustomEditColumn('Место хранения', 'storage', $editor, $this->dataset);
+            $editor = new ComboBox('storage_edit', $this->GetLocalizerCaptions()->GetMessageString('PleaseSelect'));
+            $lookupDataset = new TableDataset(
+                MySqlIConnectionFactory::getInstance(),
+                GetConnectionOptions(),
+                '`storage`');
+            $lookupDataset->addFields(
+                array(
+                    new IntegerField('idstorage', true, true),
+                    new StringField('storagename'),
+                    new StringField('storageadress'),
+                    new StringField('storagedesc')
+                )
+            );
+            $lookupDataset->setOrderByField('storagename', 'ASC');
+            $editColumn = new LookUpEditColumn(
+                'Место хранения', 
+                'storage', 
+                $editor, 
+                $this->dataset, 'idstorage', 'storagename', $lookupDataset);
             $validator = new RequiredValidator(StringUtils::Format($this->GetLocalizerCaptions()->GetMessageString('RequiredValidationMessage'), $editColumn->GetCaption()));
             $editor->GetValidatorCollection()->AddValidator($validator);
             $this->ApplyCommonColumnEditProperties($editColumn);
@@ -636,13 +682,10 @@
             $grid->AddPrintColumn($column);
             
             //
-            // View column for storage field
+            // View column for storagename field
             //
-            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column = new TextViewColumn('storage', 'storage_storagename', 'Место хранения', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddPrintColumn($column);
         }
     
@@ -689,13 +732,10 @@
             $grid->AddExportColumn($column);
             
             //
-            // View column for storage field
+            // View column for storagename field
             //
-            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column = new TextViewColumn('storage', 'storage_storagename', 'Место хранения', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddExportColumn($column);
         }
     
@@ -742,13 +782,10 @@
             $grid->AddCompareColumn($column);
             
             //
-            // View column for storage field
+            // View column for storagename field
             //
-            $column = new NumberViewColumn('storage', 'storage', 'Место хранения', $this->dataset);
+            $column = new TextViewColumn('storage', 'storage_storagename', 'Место хранения', $this->dataset);
             $column->SetOrderable(true);
-            $column->setNumberAfterDecimal(0);
-            $column->setThousandsSeparator(',');
-            $column->setDecimalSeparator('');
             $grid->AddCompareColumn($column);
         }
     
