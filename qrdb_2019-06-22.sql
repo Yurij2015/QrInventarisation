@@ -1,0 +1,188 @@
+# ************************************************************
+# Sequel Pro SQL dump
+# Версия 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Адрес: 127.0.0.1 (MySQL 5.7.24)
+# Схема: qrdb
+# Время создания: 2019-06-22 01:29:02 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Дамп таблицы category
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `category`;
+
+CREATE TABLE `category` (
+  `idcategory` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(100) DEFAULT NULL,
+  `description` varchar(245) DEFAULT NULL,
+  PRIMARY KEY (`idcategory`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+
+INSERT INTO `category` (`idcategory`, `category_name`, `description`)
+VALUES
+	(1,'Строительный материалы','Строительный материалы');
+
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Дамп таблицы employee
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `employee`;
+
+CREATE TABLE `employee` (
+  `idemployee` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
+  `info` varchar(45) DEFAULT NULL,
+  `position_idposition` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idemployee`),
+  KEY `fk_employee_position1_idx` (`position_idposition`),
+  CONSTRAINT `fk_employee_position1` FOREIGN KEY (`position_idposition`) REFERENCES `position` (`idposition`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+
+INSERT INTO `employee` (`idemployee`, `name`, `phone`, `info`, `position_idposition`)
+VALUES
+	(1,'Иванов Иван Иванович',NULL,NULL,1);
+
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Дамп таблицы material
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `material`;
+
+CREATE TABLE `material` (
+  `idmaterial` int(11) NOT NULL AUTO_INCREMENT,
+  `namematerial` varchar(245) DEFAULT NULL,
+  `invnumber` varchar(150) DEFAULT NULL,
+  `category_idcategory` int(11) DEFAULT NULL,
+  `category` varchar(45) DEFAULT NULL,
+  `qrcode` blob,
+  PRIMARY KEY (`idmaterial`),
+  KEY `fk_material_category1_idx` (`category_idcategory`),
+  CONSTRAINT `fk_material_category1` FOREIGN KEY (`category_idcategory`) REFERENCES `category` (`idcategory`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `material` WRITE;
+/*!40000 ALTER TABLE `material` DISABLE KEYS */;
+
+INSERT INTO `material` (`idmaterial`, `namematerial`, `invnumber`, `category_idcategory`, `category`, `qrcode`)
+VALUES
+	(1,'Краска ОЛ5665','IN85997808978',1,NULL,X'89504E470D0A1A0A0000000D494844520000012200000122010300000067704DF500000006504C5445FFFFFF00000055C2D37E000000097048597300000EC400000EC401952B0E1B00000151494441546881EDD8C911C3300805506654804B52EB2E49057886582C5A9CE5249C833F97C4CACB89012C88108847C6C616BB3E1E44B910F9E90115A8EC937701E7B1F8E14F50814A1271AA9A91625E1F77A8FB941E43FD437149AC9D09EA1625A135219EBD3D7DE95F50AB145B583F3A9A97800A5453F434FD0AA875EAAC84A4D9B0894CB53D49820A54A44A2C1340BE59B1D4DFF29C26A800258357325412FB9B28B3CDE6B17F4145286945B91ED7D084CDD50115A25A3F9212F1E4D83F87CD03D472A561C9F1E3648D2A17828A533D25EDF2D5A602CFEFAB508B55CF8BD649D2BD270FD730A820D56E60FD38FBE387DB2FD442D5A35FBE74EDD6285490BA6E1E986DD5BF4D731B2A42D9677FF7F734F13891A16214CF13C03C4FD50115AB522B0CC9158D13192A546D96A67111F19E21A8A54AC2579EDE8F7411B141452AEF416DDD6C97AF42D77B1AD46285403C2E5E9C41F4FBF7F777780000000049454E44AE426082'),
+	(2,'Цемент','IN85997808999',1,NULL,X'89504E470D0A1A0A0000000D494844520000012200000122010300000067704DF500000006504C5445FFFFFF00000055C2D37E000000097048597300000EC400000EC401952B0E1B0000014D494441546881ED994B0EC3200C442D71008E94ABE7483900122DF6988FD2EE70369959247C5E562EF6988A50D42B952B74DA3CB571115F2DA40229BC8D3A0C2898F65D5241942FA76AD4A91FB5D09DA41EA2FAF422F530A539EAB255520F5158B647AA3E9A77498550BD22670D933FFED56D52FBA8A17C3B22BF446A2B6565A0BA1112B5A33D29910AA3BE2191E3522304E14B1D4D99895404653AC5C3D48EC8081DA9304ABD7F8B1046BAD7A6163A5281949F0E4B453AEA4DC1E44449055002C7EF8D6FF2FB1F3F22A4E228B7FDD6F3DA344DD98A5418A5BFFF0C0F84DADCF2D13831A4A228D1155952D152A5498552264B4FDD7F7AB62215462D370FD602C38E96B56E93DA4FE18D8230E2B254645241549DFE6199FA60D851520F501947441159AF7E48055305570D2D426E89EE1122B59352F9E910F13A7CF3ABA47653151A8DEFD400908AA428EA75FA00216683E6F26E71B50000000049454E44AE426082');
+
+/*!40000 ALTER TABLE `material` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Дамп таблицы position
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `position`;
+
+CREATE TABLE `position` (
+  `idposition` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `description` varchar(245) DEFAULT NULL,
+  PRIMARY KEY (`idposition`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `position` WRITE;
+/*!40000 ALTER TABLE `position` DISABLE KEYS */;
+
+INSERT INTO `position` (`idposition`, `name`, `description`)
+VALUES
+	(1,'Экономист',NULL);
+
+/*!40000 ALTER TABLE `position` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Дамп таблицы revision
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `revision`;
+
+CREATE TABLE `revision` (
+  `idrevision` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime DEFAULT NULL,
+  `info` varchar(145) DEFAULT NULL,
+  `material_idmaterial` int(11) NOT NULL,
+  `employee_idemployee` int(11) DEFAULT NULL,
+  `count` varchar(10) DEFAULT NULL,
+  `storage` int(11) NOT NULL,
+  PRIMARY KEY (`idrevision`),
+  KEY `fk_revision_material1_idx` (`material_idmaterial`),
+  KEY `fk_revision_employee1_idx` (`employee_idemployee`),
+  KEY `fk_revision_storage1_idx` (`storage`),
+  CONSTRAINT `fk_revision_employee1` FOREIGN KEY (`employee_idemployee`) REFERENCES `employee` (`idemployee`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_revision_material1` FOREIGN KEY (`material_idmaterial`) REFERENCES `material` (`idmaterial`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_revision_storage1` FOREIGN KEY (`storage`) REFERENCES `storage` (`idstorage`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `revision` WRITE;
+/*!40000 ALTER TABLE `revision` DISABLE KEYS */;
+
+INSERT INTO `revision` (`idrevision`, `date`, `info`, `material_idmaterial`, `employee_idemployee`, `count`, `storage`)
+VALUES
+	(1,'2019-06-18 00:00:00',NULL,1,1,'55',1);
+
+/*!40000 ALTER TABLE `revision` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Дамп таблицы storage
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `storage`;
+
+CREATE TABLE `storage` (
+  `idstorage` int(11) NOT NULL AUTO_INCREMENT,
+  `storagename` varchar(100) DEFAULT NULL,
+  `storageadress` varchar(100) DEFAULT NULL,
+  `storagedesc` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`idstorage`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `storage` WRITE;
+/*!40000 ALTER TABLE `storage` DISABLE KEYS */;
+
+INSERT INTO `storage` (`idstorage`, `storagename`, `storageadress`, `storagedesc`)
+VALUES
+	(1,'Склад 1',NULL,NULL);
+
+/*!40000 ALTER TABLE `storage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

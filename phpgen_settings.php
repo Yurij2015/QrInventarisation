@@ -61,7 +61,7 @@ function GetPageInfos()
 {
     $result = array();
     $result[] = array('caption' => 'Генерировать QR-код', 'short_caption' => 'Генерировать QR-код', 'filename' => 'qr-gen.php', 'name' => 'qr-read', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
-    $result[] = array('caption' => 'Прочить QR-код', 'short_caption' => 'Прочить QR-код', 'filename' => 'qr-read.html', 'name' => 'qr-read', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
+    $result[] = array('caption' => 'Прочитать QR-код', 'short_caption' => 'Прочитать QR-код', 'filename' => 'qr-read.html', 'name' => 'qr-read', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
     $result[] = array('caption' => 'Категории', 'short_caption' => 'Категории', 'filename' => 'category.php', 'name' => 'category', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
     $result[] = array('caption' => 'Сотрудники', 'short_caption' => 'Сотрудники', 'filename' => 'employee.php', 'name' => 'employee', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');
     $result[] = array('caption' => 'Материалы', 'short_caption' => 'Материалы', 'filename' => 'material.php', 'name' => 'material', 'group_name' => 'Default', 'add_separator' => false, 'description' => '');

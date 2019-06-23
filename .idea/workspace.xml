@@ -3,9 +3,53 @@
   <component name="ChangeListManager">
     <list default="true" id="dd1b0957-699d-4e1c-bb07-f1683bfa9160" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpgen_settings999.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qr-gen/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/revision.php" beforeDir="false" afterPath="$PROJECT_DIR$/revision.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpgen_settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpgen_settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qr-gen.php" beforeDir="false" afterPath="$PROJECT_DIR$/qr-gen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrdb.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test0c97c1c613cd3fcb7b2ce9238cb04d15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test10edfc75b0bf93ffbd52b4dad180a658.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test17eed4bf87c4e39c2d0f9d6602e6a6d0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test1df79d71d92e5295995c5f63318b56d2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test227ccef04265693c19a06664a6311583.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test2ad6ccc9ea10f99f83c269935f0272e0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test2f6dd9e7ff5054f5bc03b83e2404ec66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test30333f9bd356b43da90e4789d47202cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test4bfc7b0661bbd34566cc92c07b6bf785.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test50d24d22fce856a20469727fc5a1b92f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test51d1b147bd97ec4c1bc503b973025345.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test567903b99f457c5af27bb2a0a347552b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test58b2c95a64809db3bec0c95ea68e9a98.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test5aa3e88c1dba5382f4260c54c89baa3c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test5fc6fddca6852502221054d5dfb2abba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test6473cb9acf754e1f2b53e66fe38acc01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test6d8d41ed30dd96715d1571fad67f5bd4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test6e78defec4d452872f20bca44064709d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test71445e87f516720581266d480be372a2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test77c014f0ce93e2e17043a67d0279d2ac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test7c80bbf98099dfbe5a2868b68ea2a5bd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test7ddec736aca82149378f33d7b00b788b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test93e2c920edce02a1cd670b0e4b811bc4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test9ae76d3705ea1de8828277019135d493.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/test9d9859ebb4e825179a00a36b2d734ca0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testae5155eac6d55a75042f3c70d5572ff6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testb5559f887cad37e1140dde8cbe81eb62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testb8542d7fede83ee3dc60c3de2235d277.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testbbb3167d1623eb9bc56c5781c1666b98.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testbd34307cf019d26798076ae7d49e59c5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testc967ff84ac4dcdd6bd6f943932170a4f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testd3128c8d96f10674e07a5c0afcade39a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testd51dca31bc920b6d02c50990ea4cb232.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testd7582be7a3c51642ddf10b506f762183.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testd8a2b000e24895dc836218380ec4d8d0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testdb2554bbb14951259ed70f8c9ba51693.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testdce9cbf275e7b3199a78a4652e2c269b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/teste4f32c5c8980035e35e557b384b89e29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/teste85a8c4edaa002c65d16015e0dd85fda.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/teste99a317f5949f0e549368331dca31d82.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testf3dcc2e924f5a8e95d1389f16c2f0bdc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testf68c7ad730bdd35959679e0694ef6be9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp/testfd8df5dd822a7660792d46313988132d.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,43 +76,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qr-gen.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+            <state relative-caret-position="1182">
+              <caret line="230" column="48" selection-start-line="230" selection-start-column="48" selection-end-line="230" selection-end-column="48" />
               <folding>
-                <element signature="e#67#73#0" expanded="true" />
-                <element signature="e#108#114#0" expanded="true" />
-                <element signature="e#132#138#0" expanded="true" />
-                <element signature="e#379#385#0" expanded="true" />
-                <element signature="e#401#407#0" expanded="true" />
                 <element signature="e#9#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+              <folding>
+                <element signature="e#6#475#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authorization.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-369" />
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/qr-read.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="137" selection-end-column="29" />
+            <state relative-caret-position="901">
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/languages/lang.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/phpgen_settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="63" column="215" selection-start-line="63" selection-start-column="215" selection-end-line="63" selection-end-column="215" />
+            <state relative-caret-position="190">
+              <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -93,8 +142,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/components/languages/lang.php" />
         <option value="$PROJECT_DIR$/qr-read.html" />
-        <option value="$PROJECT_DIR$/qr-gen.php" />
         <option value="$PROJECT_DIR$/phpgen_settings.php" />
+        <option value="$PROJECT_DIR$/qr-gen.php" />
+        <option value="$PROJECT_DIR$/category.php" />
       </list>
     </option>
   </component>
@@ -110,7 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,23 +170,13 @@
             <path>
               <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
               <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="languages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="inventarisation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventarisation" type="462c0819:PsiDirectoryNode" />
-              <item name="qr-gen" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -183,23 +222,23 @@
       <option name="presentableId" value="Default" />
       <updated>1561124964911</updated>
       <workItem from="1561124976016" duration="593000" />
-      <workItem from="1561125744672" duration="11307000" />
+      <workItem from="1561125744672" duration="11795000" />
+      <workItem from="1561239254345" duration="2230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11900000" />
+    <option name="totallyTimeSpent" value="14618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1124" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14802982" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14962727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="PHP-CGI Server" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.19192913" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.070866145" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -207,8 +246,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13681102" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13681102" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -252,34 +292,14 @@
     <entry file="file://$PROJECT_DIR$/qr-gen/qrinput.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/VERSION">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/VERSION" />
+    <entry file="file://$PROJECT_DIR$/qr-gen/README" />
     <entry file="file://$PROJECT_DIR$/qr-gen/qrrscode.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2808" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/INSTALL">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qrdb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-428">
-          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/LICENSE" />
+    <entry file="file://$PROJECT_DIR$/qr-gen/INSTALL" />
+    <entry file="file://$PROJECT_DIR$/qrdb.sql" />
     <entry file="file://$PROJECT_DIR$/templates_c/%%EE^EE2^EE298805%%action_list.tpl.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -292,13 +312,7 @@
     <entry file="file://$PROJECT_DIR$/qr-gen/qrconfig.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/qr-read.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" selection-start-line="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/qr-read.html" />
     <entry file="file://$PROJECT_DIR$/components/templates/common/site_header.tpl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -319,19 +333,6 @@
     <entry file="file://$PROJECT_DIR$/components/templates/navigation.tpl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorization.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12364">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#475#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qr-gen/temp/test7c80bbf98099dfbe5a2868b68ea2a5bd.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -341,11 +342,7 @@
     <entry file="file://$PROJECT_DIR$/qr-gen/temp/test51d1b147bd97ec4c1bc503b973025345.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/CHANGELOG">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/qr-gen/CHANGELOG" />
     <entry file="file://$PROJECT_DIR$/qr-gen/tools/merge.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-331" />
@@ -377,16 +374,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qr-gen/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding>
-            <element signature="e#400#406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/qr-gen/index.php" />
+    <entry file="file://$PROJECT_DIR$/phpgen_settings666.php" />
+    <entry file="file://$PROJECT_DIR$/phpgen_settings999.php" />
+    <entry file="file://$PROJECT_DIR$/temp/test.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/temp/test4bfc7b0661bbd34566cc92c07b6bf785.png" />
+    <entry file="file://$PROJECT_DIR$/temp/test2ad6ccc9ea10f99f83c269935f0272e0.png" />
+    <entry file="file://$PROJECT_DIR$/temp/test1df79d71d92e5295995c5f63318b56d2.png" />
+    <entry file="file://$PROJECT_DIR$/phpgen_settings555.php" />
     <entry file="file://$PROJECT_DIR$/components/languages/lang.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="642">
@@ -394,68 +391,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phpgen_settings666.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="62" column="10" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="215" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpgen_settings999.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="62" column="178" selection-start-line="62" selection-start-column="3" selection-end-line="63" selection-end-column="215" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/test4bfc7b0661bbd34566cc92c07b6bf785.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/test2ad6ccc9ea10f99f83c269935f0272e0.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp/test1df79d71d92e5295995c5f63318b56d2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/qr-read.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="137" selection-end-column="29" />
+        <state relative-caret-position="901">
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorization.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpgen_settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qr-gen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+        <state relative-caret-position="1182">
+          <caret line="230" column="48" selection-start-line="230" selection-start-column="48" selection-end-line="230" selection-end-column="48" />
           <folding>
-            <element signature="e#67#73#0" expanded="true" />
-            <element signature="e#108#114#0" expanded="true" />
-            <element signature="e#132#138#0" expanded="true" />
-            <element signature="e#379#385#0" expanded="true" />
-            <element signature="e#401#407#0" expanded="true" />
             <element signature="e#9#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phpgen_settings555.php">
+    <entry file="file://$PROJECT_DIR$/category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="62" column="3" lean-forward="true" selection-start-line="62" selection-start-column="3" selection-end-line="63" selection-end-column="215" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpgen_settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="63" column="215" selection-start-line="63" selection-start-column="215" selection-end-line="63" selection-end-column="215" />
+        <state relative-caret-position="497">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+          <folding>
+            <element signature="e#6#475#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

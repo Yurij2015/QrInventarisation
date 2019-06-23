@@ -94,7 +94,7 @@
 
                         <li>
                             <a class="sidebar-nav-item" href="qr-read.html" title="Читать QR-код">
-                                Читать QR-код
+                                Прочитать QR-код
                             </a>
                         </li>
 
@@ -195,14 +195,15 @@
                             die('data cannot be empty! <a href="?">back</a>');
 
                         // user data
-                        $filename = $PNG_TEMP_DIR . 'test' . md5($_REQUEST['data'] . '|' . $errorCorrectionLevel . '|' . $matrixPointSize) . '.png';
+                        //$filename = $PNG_TEMP_DIR . 'test' . md5($_REQUEST['data'] . '|' . $errorCorrectionLevel . '|' . $matrixPointSize) . '.png';
+                        $filename = $PNG_TEMP_DIR . 'qrFor_' . $_REQUEST['data'] . '.png';
                         QRcode::png($_REQUEST['data'], $filename, $errorCorrectionLevel, $matrixPointSize, 2);
 
                     } else {
 
                         //default data
-                       // echo 'Данные можно отправлять в GET параметрах: <a href="?data=данные из гет-параметров">данные из гет-параметров</a><hr/>';
-                       // QRcode::png('PHP QR Code :)', $filename, $errorCorrectionLevel, $matrixPointSize, 2);
+                        // echo 'Данные можно отправлять в GET параметрах: <a href="?data=данные из гет-параметров">данные из гет-параметров</a><hr/>';
+                        // QRcode::png('PHP QR Code :)', $filename, $errorCorrectionLevel, $matrixPointSize, 2);
 
                     }
 
